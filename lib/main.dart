@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:vault_flutter/core/theme/app_theme.dart';
-import 'package:vault_flutter/features/home/screens/home_screen.dart';
+import 'package:vault_flutter/features/navigation/screens/main_navigation_screen.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 void main() {
-  runApp(const VaultApp());
+  runApp(const ProviderScope(child: VaultApp()));
 }
 
 class VaultApp extends StatelessWidget {
@@ -17,7 +18,7 @@ class VaultApp extends StatelessWidget {
       theme: AppTheme.lightTheme,
       darkTheme: AppTheme.darkTheme,
       themeMode: ThemeMode.system,
-      home: const HomeScreen(),
+      home: const MainNavigationScreen(),
     );
   }
 }
